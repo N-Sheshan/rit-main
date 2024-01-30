@@ -1,0 +1,196 @@
+<div class="formbold-main-wrapper">
+    <div class="formbold-form-wrapper">
+        <!-- <img src="your-image-url-here.jpg"> -->
+        <form (submit)="To_DB()" #myForm="ngForm">
+            <div class="formbold-form-title">
+                <h2 class="">COURSE ENTRY</h2>
+
+            </div>
+
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="Year" class="formbold-form-label">
+                        Year*
+                    </label>
+                    <select name="Regulation" id="Year" class="formbold-form-input"
+                        [(ngModel)]="course_master_data.year" required>
+                        <option value="" disabled selected hidden>Select year</option>
+                        <option [value]="1">1</option>
+                        <option [value]="2">2</option>
+                        <option [value]="3">3</option>
+                        <option [value]="4">4</option>
+                    </select>
+                    <!-- <div *ngIf="yearField.invalid && yearField.touched"s class="error-message">
+                            Year is required.
+                          </div> -->
+                </div>
+                <div>
+
+                    <label for="Semester" class="formbold-form-label">Semester* </label>
+                    <select name="Regulation" class="formbold-form-input" [(ngModel)]="course_master_data.semester"
+                        required>
+                        <option value="" disabled selected hidden>Select Semester</option>
+                        <option [value]="1"> 1</option>
+                        <option [value]="2">2</option>
+                        <option [value]="3"> 3</option>
+                        <option [value]="4"> 4</option>
+                        <option [value]="5"> 5</option>
+                        <option [value]="6"> 6</option>
+                        <option [value]="7"> 7</option>
+                        <option [value]="8"> 8</option>
+
+                    </select>
+
+                </div>
+                <div>
+                    <label for="Regulation" class="formbold-form-label"> Regulation* </label>
+                    <select name="Regulation" id="Regulation" class="formbold-form-input"
+                        [(ngModel)]="course_master_data.regulation" required>
+                        <option value="" disabled selected hidden>Select Regulation</option>
+                        <!-- <option [value]="2017">2017</option> -->
+                        <option [value]="2021">2021</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="formbold-input-flex">
+                <!-- <div><label for="Vertical_code" class="formld-form-label">
+                            Vertical code*
+                        </label>
+                        <input type="text" name="Vertical_code" id="Vertical_code" class="formbold-form-input" />
+                    </div> -->
+                <div><label for="Course_code" class="formbold-form-label">
+                        Course_code*
+                    </label>
+                    <input type="text" name="Course_code" id="Course_code" class="formbold-form-input"
+                        [(ngModel)]="course_master_data.course_code" required placeholder="Enter course_code" />
+                </div>
+                <div><label for="Course_Title" class="formbold-form-label">
+                    Course_Title*
+                </label>
+                <input type="text" name="Course_Titlee" id="Course_code" class="formbold-form-input"
+                    [(ngModel)]="course_master_data.course_title" required placeholder="Enter Course_Title" />
+            </div>
+                
+
+            </div>
+
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="Category" class="formbold-form-label"> Course Type*</label>
+                    <select name="Category" id="Category" class="formbold-form-input" [(ngModel)]="course_master_data.course_type" required>
+                        <option value="" disabled selected hidden>Select Category</option>
+                        <option value="THEORY">THEORY</option>
+                        <option value="PRACTICAL">PRACTICAL</option>
+                        <option value="PROJECT">PROJECT</option>
+                        <option value="INTERNSHIP">INTERNSHIP</option>
+                    
+                      </select>
+                </div>
+                <div>
+                    <label for="Course_SubType" class="formbold-form-label"> Course SubType* </label>
+                    <select name="Course_SubType" id="Course_SubType" class="formbold-form-input"
+                        [(ngModel)]="course_master_data.course_subtype" required style="overflow: auto;">
+                        <option value="" disabled selected hidden>Select Course_SubType</option>
+                        <!-- <option value="THEORY">THEORY</option>
+                        <option value="PRACTICALS">PRACTICALS</option> -->
+                        <option value="CORE">CORE</option>
+                        <option value="PROFESSIONAL ELECTIVE 1">PROFESSIONAL ELECTIVE 1</option>
+                        <option value="PROFESSIONAL ELECTIVE 2">PROFESSIONAL ELECTIVE 2</option>
+                        <option value="PROFESSIONAL ELECTIVE 3">PROFESSIONAL ELECTIVE 3</option>
+                        <option value="PROFESSIONAL ELECTIVE 4">PROFESSIONAL ELECTIVE 4</option>
+                        <option value="PROFESSIONAL ELECTIVE 5">PROFESSIONAL ELECTIVE 5</option>
+                        <option value="PROFESSIONAL ELECTIVE 6">PROFESSIONAL ELECTIVE 6</option>
+                        <option value="PROFESSIONAL ELECTIVE 7">PROFESSIONAL ELECTIVE 7</option>
+                        <option value="OPEN ELECTIVE 1">OPEN ELECTIVE 1</option>
+                        <option value="OPEN ELECTIVE 2">OPEN ELECTIVE 2</option>
+                        <option value="OPEN ELECTIVE 3">OPEN ELECTIVE 3</option>
+                        <option value="OPEN ELECTIVE 4">OPEN ELECTIVE 4</option>
+                        <option value="MANDATORY 1">MANDATORY 1</option>
+                        <option value="MANDATORY 2">MANDATORY 2</option>
+                        
+
+                       
+
+                    </select>
+                </div>
+               
+
+                <div>
+                    <label for="Category" class="formbold-form-label"> Category*</label>
+                    <select name="Category" id="Category" class="formbold-form-input" [(ngModel)]="course_master_data.category" required>
+                        <option value="" disabled selected hidden>Select Category</option>
+                        <option value="AC">AC</option>
+                        <option value="BSC">BSC</option>
+                        <option value="EEC">EEC</option>
+                        <option value="ESC">ESC</option>
+                        <option value="HSMC">HSMC</option>
+                        <option value="MC">MC</option>
+                        <option value="OEC">OEC</option>
+                        <option value="PCC">PCC</option>
+                        <option value="PEC">PEC</option>
+                      </select>
+                </div>
+                <div>
+                    <label for="Credit" class="formbold-form-label">Credit*</label>
+                    <select name="Credit" id="Credit" class="formbold-form-input"
+                        [(ngModel)]="course_master_data.credit" required>
+                        <option value="" disabled selected hidden>Select Credit</option>
+                        <option [value]="0">0</option>
+                        <option [value]="1">1</option>
+                        <option [value]="1.5">1.5</option>
+                        <option [value]="2">2</option>
+                        <option [value]="3">3</option>
+                        <option [value]="4">4</option>
+                    </select>
+
+                </div>
+                
+            </div>
+
+            
+
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="ppw_lectur" class="formbold-form-label">PPW-Lectur*</label>
+                    <select name="ppw_lectur" id="ppw_lectur" class="formbold-form-input"
+                        [(ngModel)]="course_master_data.ppw_lectur" required>
+                        <option value="" disabled selected hidden >Select PPW-Lectur</option>
+                        <option [value]="0">0</option>
+                        <option [value]="1">1</option>
+                        <option [value]="2">2</option>
+                        <option [value]="3">3</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="PPW-Tutorial" class="formbold-form-label"> PPW-Tutorial* </label>
+                    <select name="PPW-Tutorial" id="PPW-Tutorial" class="formbold-form-input"
+                        [(ngModel)]="course_master_data.ppw_tutorial" required>
+                        <option value="" disabled selected hidden>Select PPW-Tutorial</option>
+                        <option [value]="0">0</option>
+                        <option [value]="1">1</option>
+                        <option [value]="2">2</option>
+                        <option [value]="3">3</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="PPW-Practical" class="formbold-form-label"> PPW-Practical*</label>
+                    <select name="PPW-Practical" id="PPW-Practical" class="formbold-form-input"
+                        [(ngModel)]="course_master_data.ppw_practical" required>
+                        <option value="" disabled selected hidden>Select PPW-Practical</option>
+                        <option [value]="0">0</option>
+                        <option [value]="1">1</option>
+                        <option [value]="2">2</option>
+                        <option [value]="3">3</option>
+                        <option [value]="4">4</option>
+                        <option [value]="20">20</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" [disabled]='!myForm.form.valid'
+                [ngClass]="{'default-button':!myForm.form.valid,'blue-button':myForm.form.valid}">Add To DB</button>
+        </form>
+    </div>
+</div>
+<!--  -->

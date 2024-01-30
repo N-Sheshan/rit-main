@@ -1,0 +1,130 @@
+<app-fnavbar></app-fnavbar>
+
+<div class="image">
+    <!-- <img src="assets/images/rit (2).jpg" alt=""> -->
+</div>
+<div class="main">
+    <!-- Sign up form -->
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title">Sign up</h2>
+
+                    <form method="POST" class="register1-form" id="register1-form" [formGroup]="registerfromdata"
+                        (ngSubmit)="submitdata()">
+                        <div class="line">
+                            <div class="form-group">
+                                <label for="name"><i class='bx bxs-user'></i></label>
+                                <input type="text" name="name" id="name" placeholder="Your Name" formControlName="name"
+                                    autocomplete="off" />
+                            </div>
+                            <div class="error" *ngIf="Name.errors?.['required'] && (Name.touched || Name.dirty)">Name is
+                                requied</div>
+                            <div class="error" *ngIf="Name.errors?.['minlength'] && (Name.touched || Name.dirty)">Name
+                                is too short</div>
+                            <div class="error" *ngIf="Name.errors?.['pattern'] && (Name.touched || Name.dirty)">Name
+                                should start with Alphabet</div>
+                        </div>
+
+                        <div class="line">
+                            <div class="form-group">
+                                <label for="name"><i class='bx bxs-user'></i></label>
+                                <input type="text" name="name" id="name" placeholder="FacultyID" formControlName="FacultyID"
+                                    autocomplete="off" />
+                            </div>
+                            <div class="error" *ngIf="FacultyID.errors?.['required'] && (FacultyID.touched || FacultyID.dirty)">FacultyID is
+                                requied</div>
+                          
+                        </div>
+                        <div class="line">
+                            <div class="form-group">
+                                <label for="email"><i class='bx bxs-envelope'></i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email"
+                                    formControlName="email" />
+                                <div class="error" *ngIf="Email.errors?.['required'] && (Email.touched || Email.dirty)">
+                                    Eamil is requied</div>
+                                <div class="error" *ngIf="Email.errors?.['email'] && (Email.touched || Email.dirty)">
+                                    Email is invalid</div>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <div class="form-group">
+                                <label for="pass"><i class='bx bxs-shield-alt-2'></i></label>
+                                <input type="password" name="pass" id="pass" placeholder="Password"
+                                    formControlName="password" />
+                                <div class="error"
+                                    *ngIf="Password.errors?.['required'] && (Password.touched || Password.dirty)">
+                                    Password is requied</div>
+                                <div class="error"
+                                    *ngIf="Password.errors?.['minlength'] ||Password.errors?.['maxlength']  && (Password.touched || Password.dirty)">
+                                    Password shold be minimum 8 charaters maxmum 15 charaters</div>
+                            </div>
+                            <div class="error"
+                                    *ngIf="Password.errors?.['pattern']  && (Password.touched || Password.dirty)">
+                                    Password should be in combination of number and charaters </div>
+                            </div>
+                       
+                        <div class="line">
+                            <div class="form-group">
+                                <label for="re-pass"><i class='bx bxs-check-shield'></i></label>
+                                <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"
+                                    formControlName="re_password" />
+                                    <div class="error"
+                                    *ngIf="Re_password.errors?.['required'] && (Re_password.touched || Re_password.dirty)">
+                                    Re_password is requied</div>
+                                    <div class="error" [ngStyle]="{'display':repass}">
+                                        password is invalid
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <div class="form-group">
+                              <label for="Role"><i class='bx bxs-user'></i></label>
+                              <select id="Role" name="Role" formControlName="Role" required>
+                                <option value="">Select Role</option>
+                                <option value="HOD">HOD</option>
+                                <option value="Faculty">Faculty</option>
+                              </select>
+                              <div class="error"
+                              *ngIf="Role.errors?.['required'] && (Role.touched || Role.dirty)">
+                                Role is required.
+                              </div>
+                            </div>
+                        </div>
+                          
+
+                        <!-- <div class="line">
+                            <div class="form-group">
+                                <label for="FacultyID"><i class='bx bxs-user'></i></label>
+                                <input type="text" name="FacultyID" id="FacultyID" placeholder="ID" formControlName="ID"
+                                    autocomplete="off" />
+                            </div>
+                        
+                            
+                                <div class="error" *ngIf="FacultyID.errors?.['required'] && (FacultyID.touched || FacultyID.dirty)">Name is
+                                    requied</div>
+
+                        </div> -->
+                    
+
+
+                        <!-- <div class="form-group">
+                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                        </div> -->
+                        <div class="form-group form-button"
+                            style="display: flex;justify-content: space-between;width:100%;">
+                            <input type="submit" name="signup" id="signup" class="form-submit" value="Register" [disabled]="registerfromdata.invalid" />
+                            <input name="signup"  class="form-submit" value="login" routerLink="../login" />
+                        </div>
+                    </form>
+                </div>
+                <div class="signup-image">
+                    <figure><img src="assets/images/ritlogo1.png" alt="sing up image"></figure>
+                    <a href="#" class="signup-image-link"><span>RAMCO</span> institute of technology</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

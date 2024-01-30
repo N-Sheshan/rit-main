@@ -1,0 +1,74 @@
+<app-fnavbar></app-fnavbar>
+<div class="image">
+    <!-- <img src="assets/images/rit (2).jpg" alt=""> -->
+</div>
+<div class="main">
+    <!-- Sign in  Form -->
+    <section class="sign-in">
+        <div class="container">
+            <div class="signin-content">
+                <div class="signin-image">
+                    <figure><img src="assets/images/ritlogo1.png" alt="sing up image"></figure>
+                    <br>
+                    
+                    <a href="#" class="signup-image-link"><span>RAMCO</span> institute of technology</a>
+                </div>
+
+                <div class="signin-form">
+                    <h2 class="form-title">Sign in</h2>
+                    <form method="POST" class="register-form" id="login-form" [formGroup]="loginfromdata"
+                        (ngSubmit)="submitdata()">
+                        <div class="line">
+                            <div class="form-group">
+                                <label for="your_name"><i class='bx bxs-user'></i></label>
+                                <input type="text" name="your_name" id="your_name" placeholder="Your Name"  formControlName="username" />
+                            </div>
+                            <div class="error"
+                                *ngIf="Username.errors?.['required'] && (Username.touched || Username.dirty)">
+                                Name is requied</div>
+                            <div class="error"
+                                *ngIf="Username.errors?.['pattern'] && (Username.touched || Username.dirty)">
+                                Name should start with Alphabet</div>
+                        </div>
+                        <div class="line">
+                            <div class="form-group">
+                                <label for="your_pass"><i class='bx bxs-check-shield'></i></label>
+                                <input type="password" name="your_pass" id="your_pass" placeholder="Password" formControlName="password" />
+                            </div>
+                            <div class="error" *ngIf="Password.errors?.['required'] && (Password.touched || Password.dirty)">
+                                Password is requied</div>
+                            <div class="error" *ngIf="Password.errors?.['minlength'] || Password.errors?.['maxlength'] && (Password.touched || Password.dirty)">
+                                Password shold be minimum 8 charaters maxmum 15 charaters
+                            </div>
+                        </div>
+
+
+                        <!-- <div class="form-group">
+                           <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                           <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                       </div> -->
+                        <div class="form-group form-button login_button"
+                            style="display: flex;justify-content: space-between;width:100%;">
+                            <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" [disabled]="loginfromdata.invalid" />
+                            <input name="signin" id="" class="form-submit" routerLink="/register" value="Register" />
+                        </div>
+                        <div class="form-group form-button login_button"
+                            style="display: flex;justify-content: space-between;width:100%;">
+                            <input type="submit" name="signin" id="signin" class="form-submit" value="mainpage" routerLink="../mainpage" />
+                            <!-- <input name="signin" id="" class="form-submit" routerLink="/university_entry" value="university mark entry" /> -->
+                        </div>
+                    </form>
+                    <!-- <div class="social-login">
+                       <span class="social-label">Or login with</span>
+                       <ul class="socials">
+                           <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                           <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+                           <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                       </ul>
+                   </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

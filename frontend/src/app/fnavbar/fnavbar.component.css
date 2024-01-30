@@ -1,0 +1,11 @@
+
+.navbar-brand span{
+    color: #19c319e5;
+}
+.navbar-collapse {
+    display: flex;
+    justify-content: flex-end;
+}
+.navbar-nav{
+    margin-right: 10%;
+}
